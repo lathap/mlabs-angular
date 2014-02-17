@@ -1,8 +1,9 @@
 # mlabs-angular
 
 Angular JS project
-
+dependencies - mongodb,nodejs
 ## Install
+
 
 install with `nodejs`
 npm install
