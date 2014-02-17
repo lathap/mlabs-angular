@@ -1,5 +1,4 @@
 # mlabs-angular
-=============
 
 Angular JS project
 
@@ -10,16 +9,18 @@ npm install
 
 ##Documentation for Api
 
-Adding a group
-url: /api/group
-method: Post
+####Adding a group
+        url: /api/group
+        method: Post
 
-required params:
-name - String
-optional parameters:
-title - String
-description - String
+#####Required params:
+        name - String
+#####Optional parameters:
+        title - String
+        description - String
 
+#####Sample code in angular js to use the api
+```
 $http({
 	method:'POST', 
 	url:'/api/group', 
@@ -31,5 +32,6 @@ $http({
 	}).success(function(resp)){
 		//resp.data contains the newly created group
 	});
+```
 		
  
