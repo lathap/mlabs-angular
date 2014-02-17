@@ -221,12 +221,14 @@ exports.comment.rate = function(req, res){
 	var params = getParams(req);
 	console.log(params);
 	Group.findOne({_id:params.id},function(err, group){	
-		var about = params.about || group.about || null,
+		var desc = params.description || group.description || null,
+			name = params.name || group.name || null,
 			title = params.title || group.title || null,
-		    dirty = params.about || params.title;
+		    dirty = params.name || params.title || params.description;
 		
 		if(dirty){
-			group.about = about;
+			group.name = name;
+			group.description = desc;
 			group.title = title;
 			group.save(function(err, group){
 				wrapJson(req, res , group);

@@ -7,9 +7,10 @@ var groupSchema = new Schema({
     owner:{type:ObjectId, ref: 'User'},
 	createdOn: {type:Date, default:Date.now},
 	lastModified: {type:Date, default: Date.now},
-	members:[{type:ObjectId, ref:'User'}],	
+	members:[{type:ObjectId, ref:'User'}],
+	name:{type:String, required: true, index: { unique: true }},
 	title:{type:String},
-	about:{type:String},
+	description:{type:String},
     posts:[{type:ObjectId, ref: 'Post'}],
 	meta:{
 		likes: [{'user':{type:ObjectId, ref:'User'}, 'like':{type:Number,min:0,max:1}}],		
