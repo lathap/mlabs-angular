@@ -71,7 +71,8 @@ var wrapJson = function(req, res, json, errors){
     var response = {
         user: req.session.loggedIn ? req.session.user : 'GUEST',
         data:json,
-        errors:errors
+        errors:errors,
+        loggedIn:req.session.loggedIn? true: false		
     };
     res.send(response); 
 }
