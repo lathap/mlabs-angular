@@ -78,6 +78,7 @@ app.post('/api/comment/rate',isLoggedIn, api.comment.rate);
 
 /******** GROUP API ***/
 app.post('/api/group', isLoggedIn, api.group.add);
+app.get('/api/group/:name/:title/:description', isLoggedIn, api.group.add);
 app.post('/api/group/edit/:id', isLoggedIn, api.group.update);
 app.get('/api/group/:id', isLoggedIn, api.group.findById);
 app.post('/api/group/like', isLoggedIn, api.group.like);

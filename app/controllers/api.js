@@ -200,8 +200,9 @@ exports.comment.rate = function(req, res){
  exports.group.add = function(req, res){
     var params = getParams(req);
     new Group({
+        name: params.name,
         title: params.title,
-        about: params.body,
+        description:params.description,		
         owner:req.session.user._id,
         members:[],
         posts:[]        
@@ -310,7 +311,7 @@ exports.login = function(req, res) {
             // handle login success
             req.session.user = user;
             req.session.loggedIn = true;
-            wrapJson(req, res , {});
+            wrapJson(req, res , {loggedIn:true});
             return;
         }
 
@@ -329,7 +330,7 @@ exports.login = function(req, res) {
         }
         req.session.user = {user: 'GUEST'}
         req.session.loggedIn = false;
-        wrapJson(req, res , {});
+        wrapJson(req, res , {loggedIn:false});
     });
 }
 //CREATE USER
