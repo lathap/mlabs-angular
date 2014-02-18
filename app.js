@@ -1,7 +1,6 @@
 
 /**
  * Module dependencies.
- hgfhgf
  */
 
 var express = require('express');
